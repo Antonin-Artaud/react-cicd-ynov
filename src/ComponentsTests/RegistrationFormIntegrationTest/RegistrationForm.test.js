@@ -36,11 +36,16 @@ describe('RegistrationForm Integration Tests', () => {
         fireEvent.click(button);
 
         setTimeout(() =>{
-            expect(screen.getByText('Invalid first name')).toBeInTheDocument();
-            expect(screen.getByText(ErrorCodeInvalidLastName)).toBeInTheDocument();
-            expect(screen.getByText(ErrorCodeInvalidEmail)).toBeInTheDocument();
-            expect(screen.getByText(ErrorCodeInvalidDob)).toBeInTheDocument();
+            expect(screen.getByText('Invalid first name')).toBeInTheDocument()
+            expect(screen.getByText('Invalid first name')).toHaveStyle('color: red');;
+            expect(screen.getByText(ErrorCodeInvalidLastName)).toBeInTheDocument()
+            expect(screen.getByText(ErrorCodeInvalidLastName)).toHaveStyle('color: red');;
+            expect(screen.getByText(ErrorCodeInvalidEmail)).toBeInTheDocument()
+            expect(screen.getByText(ErrorCodeInvalidEmail)).toHaveStyle('color: red');;
+            expect(screen.getByText(ErrorCodeInvalidDob)).toBeInTheDocument()
+            expect(screen.getByText(ErrorCodeInvalidDob)).toHaveStyle('color: red');;
             expect(screen.getByText(ErrorCodeInvalidPostalCode)).toBeInTheDocument();
+            expect(screen.getByText(ErrorCodeInvalidPostalCode)).toHaveStyle('color: red');;
             expect(screen.getByText('pas bien joué :(')).toBeInTheDocument();
         }, 50)
     });
