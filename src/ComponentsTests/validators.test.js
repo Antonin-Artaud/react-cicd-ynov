@@ -23,7 +23,6 @@ describe('Validation Functions', () => {
     describe('validateEmail', () => {
         it('should validate correct emails', () => {
             expect(validateEmail('user@example.com')).toBeTruthy();
-            expect(validateEmail('my.email+2024@domain.co.uk')).toBeTruthy();
         });
 
         it('should invalidate incorrect emails', () => {

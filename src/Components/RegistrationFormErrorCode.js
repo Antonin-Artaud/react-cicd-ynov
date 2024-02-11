@@ -1,1 +1,6 @@
-export const InvalidEmail = 'Invalid email'
+export const ErrorCodeInvalidFirstName = 'Invalid first name'
+export const ErrorCodeInvalidLastName = 'Invalid last name'
+export const ErrorCodeInvalidEmail = 'Invalid email'
+export const ErrorCodeInvalidDob = 'Must be over 18 years old'
+export const ErrorCodeInvalidPostalCode = 'Invalid postal code'
+export const ErrorCodeInvalidCity = 'Invalid city'

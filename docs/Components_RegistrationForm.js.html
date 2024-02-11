@@ -1,4 +1,32 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Components/RegistrationForm.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Components/RegistrationForm.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
 import {validateEmail} from "../utils/validations/validateEmail";
 import {validateName} from "../utils/validations/validateName";
 import {validateDateOfBirth} from "../utils/validations/validateDateOfBirth";
@@ -9,7 +37,7 @@ import {
     ErrorCodeInvalidFirstName,
     ErrorCodeInvalidLastName, ErrorCodeInvalidCity
 } from "./RegistrationFormErrorCode";
-import {toast, ToastContainer} from "react-toastify";
+import {ToastContainer} from "react-toastify";
 
 /**
  * composant du formulaire
@@ -53,19 +81,18 @@ const RegistrationForm = () => {
                 postalCode: ''
             });
             setIsSubmitted(true);
-            toast.success('Bien joué :)')
         } else {
             setErrors(newErrors);
-            toast.error('pas bien joué :(')
+            // Display error toaster here
         }
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="firstName">Prénom:</label>
-                    <input
+        &lt;div>
+            &lt;form onSubmit={handleSubmit}>
+                &lt;div>
+                    &lt;label htmlFor="firstName">Prénom:&lt;/label>
+                    &lt;input
                         id="firstName"
                         type="text"
                         name="firstName"
@@ -73,12 +100,12 @@ const RegistrationForm = () => {
                         onChange={handleChange}
                         className={errors.firstName ? 'error' : ''}
                     />
-                    {errors.firstName && <span style={{ color: 'red' }}>Invalid first name</span>}
-                </div>
+                    {errors.firstName &amp;&amp; &lt;span style={{ color: 'red' }}>Invalid first name&lt;/span>}
+                &lt;/div>
 
-                <div>
-                    <label htmlFor="lastName">Nom:</label>
-                    <input
+                &lt;div>
+                    &lt;label htmlFor="lastName">Nom:&lt;/label>
+                    &lt;input
                         id="lastName"
                         type="text"
                         name="lastName"
@@ -86,12 +113,12 @@ const RegistrationForm = () => {
                         onChange={handleChange}
                         className={errors.lastName ? 'error' : ''}
                     />
-                    {errors.lastName && <span style={{ color: 'red' }}>{ErrorCodeInvalidLastName}</span>}
-                </div>
+                    {errors.lastName &amp;&amp; &lt;span style={{ color: 'red' }}>{ErrorCodeInvalidLastName}&lt;/span>}
+                &lt;/div>
 
-                <div>
-                    <label htmlFor="email">E-mail:</label>
-                    <input
+                &lt;div>
+                    &lt;label htmlFor="email">E-mail:&lt;/label>
+                    &lt;input
                         id={'email'}
                         type="email"
                         name="email"
@@ -99,12 +126,12 @@ const RegistrationForm = () => {
                         onChange={handleChange}
                         className={errors.email ? 'error' : ''}
                     />
-                    {errors.email && <span style={{ color: 'red' }}>{ErrorCodeInvalidEmail}</span>}
-                </div>
+                    {errors.email &amp;&amp; &lt;span style={{ color: 'red' }}>{ErrorCodeInvalidEmail}&lt;/span>}
+                &lt;/div>
 
-                <div>
-                    <label htmlFor="dob">Date de naissance:</label>
-                    <input
+                &lt;div>
+                    &lt;label htmlFor="dob">Date de naissance:&lt;/label>
+                    &lt;input
                         id={'dob'}
                         type="date"
                         name="dob"
@@ -112,24 +139,24 @@ const RegistrationForm = () => {
                         onChange={handleChange}
                         className={errors.dob ? 'error' : ''}
                     />
-                    {errors.dob && <span style={{ color: 'red' }}>{ErrorCodeInvalidDob}</span>}
-                </div>
+                    {errors.dob &amp;&amp; &lt;span style={{ color: 'red' }}>{ErrorCodeInvalidDob}&lt;/span>}
+                &lt;/div>
 
-                <div>
-                    <label htmlFor="city">Ville:</label>
-                    <input
+                &lt;div>
+                    &lt;label htmlFor="city">Ville:&lt;/label>
+                    &lt;input
                         id={'city'}
                         type="text"
                         name="city"
                         value={formData.city}
                         onChange={handleChange}
                     />
-                    {errors.city && <span style={{ color: 'red' }}>{ErrorCodeInvalidCity}</span>}
-                </div>
+                    {errors.city &amp;&amp; &lt;span style={{ color: 'red' }}>{ErrorCodeInvalidCity}&lt;/span>}
+                &lt;/div>
 
-                <div>
-                    <label htmlFor="postalCode">Code postale:</label>
-                    <input
+                &lt;div>
+                    &lt;label htmlFor="postalCode">Code postale:&lt;/label>
+                    &lt;input
                         id={'postalCode'}
                         type="text"
                         name="postalCode"
@@ -137,14 +164,37 @@ const RegistrationForm = () => {
                         onChange={handleChange}
                         className={errors.postalCode ? 'error' : ''}
                     />
-                    {errors.postalCode && <span style={{ color: 'red' }}>{ErrorCodeInvalidPostalCode}</span>}
-                </div>
+                    {errors.postalCode &amp;&amp; &lt;span style={{ color: 'red' }}>{ErrorCodeInvalidPostalCode}&lt;/span>}
+                &lt;/div>
 
-                <button type="submit" disabled={Object.values(formData).some(x => x === '')}>Enregistrer</button>
-                <ToastContainer/>
-            </form>
-        </div>
+                &lt;button type="submit" disabled={Object.values(formData).some(x => x === '')} onClick={notifyWrongInput}>Enregistrer&lt;/button>
+                &lt;ToastContainer/>
+            &lt;/form>
+        &lt;/div>
     );
 };
 
 export default RegistrationForm;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RegistrationForm.html">RegistrationForm</a></li></ul><h3>Global</h3><ul><li><a href="global.html#calculateAge">calculateAge</a></li><li><a href="global.html#validateDateOfBirth">validateDateOfBirth</a></li><li><a href="global.html#validateEmail">validateEmail</a></li><li><a href="global.html#validateName">validateName</a></li><li><a href="global.html#validatePostalCode">validatePostalCode</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Feb 11 2024 19:26:57 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
