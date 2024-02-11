@@ -41,6 +41,7 @@ describe('RegistrationForm Integration Tests', () => {
             expect(screen.getByText(ErrorCodeInvalidEmail)).toBeInTheDocument();
             expect(screen.getByText(ErrorCodeInvalidDob)).toBeInTheDocument();
             expect(screen.getByText(ErrorCodeInvalidPostalCode)).toBeInTheDocument();
+            expect(screen.getByText('pas bien joué :(')).toBeInTheDocument();
         }, 50)
     });
 
@@ -56,14 +57,17 @@ describe('RegistrationForm Integration Tests', () => {
 
         fireEvent.click(screen.getByText('Enregistrer'));
 
-        expect(localStorage.getItem('userData')).toEqual(JSON.stringify({
-            firstName: 'John',
-            lastName: 'Doe',
-            email: 'johndoe@example.com',
-            dob: '2000-01-01',
-            city: 'Paris',
-            postalCode: '75000'
-        }));
+        setTimeout(() =>{
+            expect(screen.getByText('bien joué :)')).toBeInTheDocument();
+            expect(localStorage.getItem('userData')).toEqual(JSON.stringify({
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'johndoe@example.com',
+                dob: '2000-01-01',
+                city: 'Paris',
+                postalCode: '75000'
+            }));
+        }, 50)
     });
 
 });
