@@ -1,1 +1,8 @@
-Build and Test React Application
+name: Build and Test React Application
+on:
+# Triggers the workflow on push or pull request events but only  for the main branch
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+ 
