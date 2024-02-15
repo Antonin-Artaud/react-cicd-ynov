@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-cicd-ynov/static/css/main.f855e6bc.css",
+    "main.js": "/react-cicd-ynov/static/js/main.52f9257b.js",
+    "static/js/787.ac61b555.chunk.js": "/react-cicd-ynov/static/js/787.ac61b555.chunk.js",
+    "index.html": "/react-cicd-ynov/index.html",
+    "main.f855e6bc.css.map": "/react-cicd-ynov/static/css/main.f855e6bc.css.map",
+    "main.52f9257b.js.map": "/react-cicd-ynov/static/js/main.52f9257b.js.map",
+    "787.ac61b555.chunk.js.map": "/react-cicd-ynov/static/js/787.ac61b555.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.52f9257b.js"
+  ]
+}
