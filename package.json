@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll --collectCoverageFrom=!src/app.js --collectCoverageFrom=!src/reportWebVitals.js --collectCoverageFrom=!src/index.js",
+    "test": "react-scripts test --coverage --watchAll=false --collectCoverageFrom=!src/app.js --collectCoverageFrom=!src/reportWebVitals.js --collectCoverageFrom=!src/index.js",
     "eject": "react-scripts eject",
     "jsdoc": "jsdoc -c ./jsdoc.config.json -r -d ./docs",
     "predeploy": "npm run build",
