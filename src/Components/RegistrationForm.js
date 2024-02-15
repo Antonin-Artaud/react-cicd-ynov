@@ -27,7 +27,6 @@ const RegistrationForm = () => {
     });
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const notifyWrongInput = () => toast("Incorrect inputs");
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -53,6 +52,7 @@ const RegistrationForm = () => {
                 postalCode: ''
             });
             setIsSubmitted(true);
+            console.log(isSubmitted)
             toast.success('Bien joué :)')
         } else {
             setErrors(newErrors);
